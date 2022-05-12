@@ -1,0 +1,61 @@
+spting:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+  devtools:
+    restart:
+      enabled: true
+  main:
+    allow-bean-definition-overriding: true
+
+---
+
+#local
+run:
+  mode: local
+
+spring:
+  config:
+    activate:
+      on-profile: local
+    thymeleaf:
+      cache: false
+
+logging:
+  level:
+    root: info
+---
+
+#dev
+run:
+  mode: dev
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+    thymeleaf:
+      cache: false
+
+logging:
+  level:
+    root: info
+
+---
+
+#real
+run:
+  mode: real
+
+spring:
+  config:
+    activate:
+      on-profile: real
+    thymeleaf:
+      cache: false
+
+logging:
+  level:
+    root: info
